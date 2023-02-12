@@ -277,7 +277,7 @@ The scripts used to generate the models, their rollouts, and compute their evalu
 Obtain the model weights, the rollouts, and the logs of the evaluations with
 
 ```bash
-wget https://www.dropbox.com/s/bp5atuyvz1oda0g/weights_rollouts_and_metrics.tar.gz
+wget https://www.dropbox.com/s/5kqqnrenibq4owp/weights_rollouts_and_metrics.tar.gz
 tar -xvf weights_rollouts_and_metrics.tar.gz
 ```
 

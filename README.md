@@ -10,10 +10,10 @@ experiments.
 
 It is structures as follows:
 
-## Table of Contents
+## Table of contents
 
-* [Getting Started](#getting-started)
-    + [Installation and Setup](#installation-and-setup)
+* [Getting started](#getting-started)
+    + [Installation and setup](#installation-and-setup)
       - [Cloning](#cloning)
       - [Datasets](#datasets)
     + [Environment](#environment)
@@ -21,14 +21,13 @@ It is structures as follows:
       - [C: MPS (Apple silicon)](#c--mps--apple-silicon-)
     + [Logging](#logging)
     + [Testing](#testing)
-    + [Using the Reproducibility Scripts](#reproducing)
-    + [Recording Videos](#recording-videos)
-* [Reproducing Our Results](#reproducing-our-results)
-* [Experiment with Different Configurations](#experiment-with-different-configurations)
+    + [Using the reproducibility Scripts](#reproducing)
+* [Reproducing our results](#reproducing-our-results)
+* [Experiment with different configurations](#experiment-with-different-configurations)
 
-## Getting Started
+## Getting started
 
-### Installation and Setup
+### Installation and setup
 
 #### Cloning
 
@@ -249,12 +248,12 @@ python run_on_env.py env=<env> experiment.num_eval_eps=1 \
 model.load_dir=$(pwd)/train_runs/train_<env>/<date>/<job_id>
 ```
 
-### Using the Reproducibility Scripts
+### Using the reproducibility scripts
 
 We provide scripts to reproduce our training and evaluation results. For example,
 to reproduce the Blockpush results with the configurations from the paper, run 
 `sh reproducibility_scripts/paper_params/blockpush.sh`.
-This will run a 3-fold cross-validation training with evaluations for each of the runs.
+This will run a cross-validation training for 3 independent runs with evaluations for each of the runs.
 
 Other ablations are also available in the `reproducibility_scripts` directory.
 
@@ -267,14 +266,11 @@ For example, the Blockpush experiments using the paper parameters will create
 The subdirectories inside `reproduction` must be deleted before the corresponding run can be launched.
 This may be necessary if the previous run was terminated before completion.
 
-### Recording Videos
-
-You can record videos of rollouts by adding `experiment.record_video=True` in the commandline.
-
-## Reproducing Our Results
+## Reproducing our results
 
 We provide model weights, their rollouts, and their evaluation metrics for all the experiments we ran.
 You can use these to reproduce our results at any stage of the pipeline.
+In addition we share our Weights and Biases runs in this anonymized [W&B project](https://wandb.ai/lorn-apogee07/behavior_transformer_repro).
 
 The scripts used to generate the models, their rollouts, and compute their evaluation metrics can be found in `reproducibility_scripts/`
 
@@ -285,7 +281,7 @@ wget https://www.dropbox.com/s/bp5atuyvz1oda0g/weights_rollouts_and_metrics.tar.
 tar -xvf weights_rollouts_and_metrics.tar.gz
 ```
 
-## Experiment with Different Configurations
+## Experiment with different configurations
 
 The configurations are stored in the `configs/` directory and are subdivided into categories.
 They are managed by [Hydra](https://hydra.cc/docs/intro/)

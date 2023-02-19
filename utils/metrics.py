@@ -402,7 +402,7 @@ def compute_blockpush_metrics(
                 "Probabilities/R1 (block-arm distance)": PR1_2,
                 "Probabilities/R2 (block-arm distance)": PR2_2,
                 "Probabilities/P1 (block enters the target)": PP1,
-                "Probabilities/P2 (block enters the target) ": PP2,
+                "Probabilities/P2 (block enters the target)": PP2,
                 "Probabilities/P1 (block stays in target)": PP1_2,
                 "Probabilities/P2 (block stays in target)": PP2_2,
                 "Probabilities/First block reached Red": Pfirst_reached_red,
@@ -506,7 +506,7 @@ tasks_to_complete = [
 ]
 
 
-def compute_kitchen_sequences(rollouts, treshhold=0.3):
+def compute_kitchen_sequences(rollouts, threshold=0.3):
     """Compute the tasks completed for the kitchen environment.
     Args:
         rollouts (np.ndarray): Array of shape (num_demos, rollout_length, dimensions)
@@ -536,7 +536,7 @@ def compute_kitchen_sequences(rollouts, treshhold=0.3):
                 distance = np.linalg.norm(
                     obj_qp[element_idx - idx_offset] - next_goal[element_idx]
                 )
-                if distance < treshhold:
+                if distance < threshold:
                     if task not in rollout_completion:
                         rollout_completion.append(task)
                         rollout_mapping += index_to_string[

@@ -13,7 +13,6 @@ __pycache__
 # jupyter notebook
 notebooks
 .ipynb_checkpoints
-*.ipynb
 .DS_Store
 
 # conda env
